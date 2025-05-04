@@ -112,7 +112,7 @@ fn zguiMemAlloc(size: usize, _: ?*anyopaque) callconv(.C) ?*anyopaque {
 
     const mem = mem_allocator.?.alignedAlloc(
         u8,
-        mem_alignment,
+        std.mem.Alignment.fromByteUnits(mem_alignment),
         size,
     ) catch @panic("zgui: out of memory");
 
