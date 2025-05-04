@@ -1453,6 +1453,17 @@ extern "C"
         return ImGui::GetIO().Fonts->AddFontFromFileTTF(filename, size_pixels, config, ranges);
     }
 
+    ZGUI_API const ImWchar *zguiIoGetGlyphRangesChineseFull(void)
+    {
+      return ImGui::GetIO().Fonts->GetGlyphRangesChineseFull();
+    }
+
+
+    ZGUI_API const ImWchar *zguiIoGetGlyphRangesChineseSimplifiedCommon(void)
+    {
+      return ImGui::GetIO().Fonts->GetGlyphRangesChineseSimplifiedCommon();
+    }
+
     ZGUI_API ImFont *zguiIoAddFontFromFile(const char *filename, float size_pixels)
     {
         return ImGui::GetIO().Fonts->AddFontFromFileTTF(filename, size_pixels, nullptr, nullptr);

@@ -224,6 +224,10 @@ pub const io = struct {
         ranges: ?[*]const Wchar,
     ) Font;
 
+    extern fn zguiIoGetGlyphRangesChineseFull() [*]const Wchar;
+
+    extern fn zguiIoGetGlyphRangesChineseSimplifiedCommon() [*]const Wchar;
+
     pub fn addFontFromMemory(fontdata: []const u8, size_pixels: f32) Font {
         return zguiIoAddFontFromMemory(fontdata.ptr, @intCast(fontdata.len), size_pixels);
     }
